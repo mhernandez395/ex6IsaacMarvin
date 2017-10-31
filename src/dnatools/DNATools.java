@@ -46,6 +46,9 @@ public class DNATools {
         System.out.println("0) salir");
     }
     
+    public String prueba(){
     
+    return "prueba";
+    }
     
 }
