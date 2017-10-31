@@ -51,4 +51,7 @@ public class DNATools {
     return "prueba";
     }
     
+    public String isaac(){
+        return "Isaac";
+    }
 }
