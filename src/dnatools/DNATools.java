@@ -32,7 +32,7 @@ public class DNATools {
         if (secuencia.length() <= 20) {
             
         } else {
-            System.out.println("Secuencia no valida! POr favor introduca menos de 20 bases.");
+            System.out.println("Secuencia no valida! POr favor introduca menos de 20 bases");
         }
         
     }
