@@ -61,8 +61,7 @@ public class DNATools {
             if( arrayChar[i] == caracter){
                 contador++;
             }				
-            else{}
-				
+            else{}				
         }
     return contador;
     }
