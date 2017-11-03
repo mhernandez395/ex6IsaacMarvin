@@ -25,7 +25,7 @@ public class DNATools {
     //variables
     int option = 0;
     String secuencia = "";
-    System.out.println(reverseString("Hola me llamo Isaac."));
+    
     System.out.println("Escribe una secuencia que contenga menos de 20 bases:");
     secuencia = sc.next();
     
