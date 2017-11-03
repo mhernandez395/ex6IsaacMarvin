@@ -15,36 +15,10 @@ import java.util.Scanner;
  * @version 1.0 31.10.17
  */
 public class DNATools {
-
     /**
-     * @param args the command line arguments
+     * Contiene todas las letras referidas al ADN (a,c,g,t) en minúscula.
      */
-    public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);  //crear un objeto Scanner
-    
-    //variables
-    int option = 0;
-    String secuencia = "";
-    
-    System.out.println("Escribe una secuencia que contenga menos de 20 bases:");
-    secuencia = sc.next();
-    
-        if (secuencia.length() <= 20) {
-            
-        } else {
-            System.out.println("Secuencia no valida! POr favor introduca menos de 20 bases");
-        }
-        
-    }
-    
-    public static void menu(){
-        System.out.println("Opciones:");
-        System.out.println("1) Dar la vuelta a la cadena.");
-        System.out.println("2) Encontrar base mas repetida.");
-        System.out.println("3) Encontar base menos repetida.");
-        System.out.println("4) Recuento de las bases.");
-        System.out.println("0) salir");
-    }
+    public static final String ADN = "acgt";
     
     /**
      * Invierte la cadena de texto recibida por parametros.
@@ -63,7 +37,6 @@ public class DNATools {
      * @return boolean Verdadero en caso de que la cadena contenga solo caracteres de ADN. Falso en caso en que la cantena contenga uno o mas caracteres que no sean de ADN.
      */
     public static boolean isADN(String adn) {
-        String ADN = "acgt";
         adn = adn.toLowerCase();
         boolean isADN = true;
         for(char nucleotid : adn.toCharArray()) {
@@ -84,4 +57,28 @@ public class DNATools {
     public static boolean isValidStringLength(String string, int maxLength) {
         return string.length() < maxLength;
     }
+    
+    /**
+     * Funcion que cuenta un caracter en una cadena de String
+     * @param caracter caracter que se va a contar
+     * @param secuencia Secuencia de caracter
+     * @return contador int numero de veces que aparece el caracter en la cadena.
+     */
+    public static int contarCaracter(char caracter, String secuencia){
+        int contador = 0;
+        char[] arrayChar = secuencia.toCharArray();
+ 
+        for(int i=0; i<arrayChar.length; i++){
+ 
+            if( arrayChar[i] == caracter){
+                contador++;
+            }				
+            else{}
+				
+        }
+        return contador;
+    }
+    
+    
+    
 }
