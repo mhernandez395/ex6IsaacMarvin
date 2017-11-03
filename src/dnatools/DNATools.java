@@ -25,7 +25,7 @@ public class DNATools {
     //variables
     int option = 0;
     String secuencia = "";
-    
+    System.out.println(reverseString("Hola me llamo Isaac."));
     System.out.println("Escribe una secuencia que contenga menos de 20 bases:");
     secuencia = sc.next();
     
@@ -46,13 +46,42 @@ public class DNATools {
         System.out.println("0) salir");
     }
     
-    public String prueba(){
-    
-    return "prueba";
+    /**
+     * Invierte la cadena de texto recibida por parametros.
+     * @param string String Cadena de texto a invertir.
+     * @return String Cadena de texto invertida.
+     */
+    public static String reverseString(String string) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(string);
+        return sb.reverse().toString();
     }
     
-    public String isaac(){
+    /**
+     * Valida si la cadena recibida por parámetros (ya sea en mayúscula o en minúscula) es de ADN.
+     * @param adn String Cadena a validar.
+     * @return boolean Verdadero en caso de que la cadena contenga solo caracteres de ADN. Falso en caso en que la cantena contenga uno o mas caracteres que no sean de ADN.
+     */
+    public static boolean isADN(String adn) {
+        String ADN = "acgt";
+        adn = adn.toLowerCase();
+        boolean isADN = true;
+        for(char nucleotid : adn.toCharArray()) {
+            if(!ADN.contains(String.valueOf(nucleotid))) {
+                isADN = false;
+                break;
+            }
+        }
+        return isADN;
+    }
     
-    return "isaac";
+    /**
+     * Valida si la cadena recibida por parámetros tiene una longitud valida recibida por parametros.
+     * @param string String Cadena a validar.
+     * @param maxLength int Numero que determina el máximo de caracteres que puede tener la cadena.
+     * @return true en caso de que la cadena contenga un numero inferior de caracteres que el maximo establecido por maxLength, falso en caso en el que los supere.
+     */
+    public static boolean isValidStringLength(String string, int maxLength) {
+        return string.length() < maxLength;
     }
 }
