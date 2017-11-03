@@ -46,13 +46,24 @@ public class DNATools {
         System.out.println("0) salir");
     }
     
-    public String prueba(){
-    
-    return "prueba";
-    }
-    
-    public String marvin(){
-    
-    return "marvin";
+    /**
+     * Funcion que cuenta un caracter en una cadena de String
+     * @param caracter caracter que se va a contar
+     * @param secuencia Secuencia de caracter
+     * @return contador int numero de veces que aparece el caracter en la cadena.
+     */
+    public static int contarCaracter(char caracter, String secuencia){
+        int contador = 0;
+        char[] arrayChar = secuencia.toCharArray();
+ 
+        for(int i=0; i<arrayChar.length; i++){
+ 
+            if( arrayChar[i] == caracter){
+                contador++;
+            }				
+            else{}
+				
+        }
+    return contador;
     }
 }
