@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dnatools;
 
-import java.util.Scanner;
-
-
-
 /**
- *
+ * Contiene metodos orientados al manejo de cadenas de ADN. 
  * @author Isaac y Marvin
- * @version 1.0 31.10.17
+ * @version 1.0 31-10-17
  */
 public class DNATools {
     /**
@@ -65,6 +56,8 @@ public class DNATools {
      * @return contador int numero de veces que aparece el caracter en la cadena.
      */
     public static int contarCaracter(char caracter, String secuencia){
+        caracter = Character.toLowerCase(caracter);
+        secuencia = secuencia.toLowerCase();
         int contador = 0;
         char[] arrayChar = secuencia.toCharArray();
  
@@ -75,7 +68,7 @@ public class DNATools {
             }				
             else{}				
         }
-    return contador;
+        return contador;
     }
     
     /**
@@ -102,10 +95,10 @@ public class DNATools {
      */
     public static char baseMenosRepetida(String sequence) {
         char result = ' ';
-        int repetida = 1;
+        int repetida = 0;
         for(int i = 0; i < ADN.length(); i++) {
             int num = contarCaracter(ADN.charAt(i), sequence);
-            if(repetida >  num && num != 0) {
+            if((repetida >  num || result == ' ') && num > 0) {
                 result = ADN.charAt(i);
                 repetida = contarCaracter(ADN.charAt(i), sequence);
             }

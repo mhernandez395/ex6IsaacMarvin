@@ -3,8 +3,18 @@ package dnatools;
 import java.util.Scanner;
 
 /**
- *
- * @author Administrador
+ * Esta clase contiene el desarrollo del ejercício 6:
+ *  6.-Tenim un programa que ens deixa escriure un tros d’ADN en una mida de 20.
+ *  Un cop introduït, ens ensenya un menú amb les opcions de:
+ *  - Donar la volta
+ *  - Trobar la base més repetida,
+ *  - Trobar la base menys repetida
+ *  - Fer recompte de bases
+ *  - Sortir.
+ *  - Segons l'opció escollida podrem visualitzar un o altre resultat, o bé, 
+ *  sortir de l'aplicació
+ * @author Marvin y Isaac
+ * @version 1.0 03-11-2017
  */
 public class Main {
 
@@ -37,12 +47,12 @@ public class Main {
                             System.out.println(DNATools.reverseString(sequence));
                             break;
                         case 2:
-                            //char baseMasRepetida = DNATools.baseMasRepetida(sequence);
-                            //System.out.println( baseMasRepetida + " = " + DNATools.contarCaracter(baseMasRepetida, sequence));
+                            char baseMasRepetida = DNATools.baseMasRepetida(sequence);
+                            System.out.println( baseMasRepetida + " = " + DNATools.contarCaracter(baseMasRepetida, sequence));
                             break;
                         case 3:
-                            //char baseMenosRepetida = DNATools.baseMenosRepetida(sequence);
-                            //System.out.println( baseMenosRepetida + " = " + DNATools.contarCaracter(baseMenosRepetida, sequence));
+                            char baseMenosRepetida = DNATools.baseMenosRepetida(sequence);
+                            System.out.println( baseMenosRepetida + " = " + DNATools.contarCaracter(baseMenosRepetida, sequence));
                             break;
                         case 4:
                             System.out.println("A = " + a);
@@ -67,6 +77,9 @@ public class Main {
         }
     }
     
+    /**
+     * Muestra por consola el menú que corresponde al ejercício de esta clase.
+     */
     public static void menu(){
         System.out.println("Opciones:");
         System.out.println("1) Dar la vuelta a la cadena.");
