@@ -76,9 +76,41 @@ public class DNATools {
             else{}
 				
         }
-        return contador;
+    return contador;
     }
     
+    /**
+     * Encuentra la base mas repetida de la secuencia de ADN recibida por parametros.
+     * @param sequence String sequencia a analizar.
+     * @return char Nombre de la base mas repetida.
+     */
+    public static char baseMasRepetida(String sequence) {
+        char result = ' ';
+        int repetida = 0;
+        for(int i = 0; i < ADN.length(); i++) {
+            if(repetida <  contarCaracter(ADN.charAt(i), sequence)) {
+                result = ADN.charAt(i);
+                repetida = contarCaracter(ADN.charAt(i), sequence);
+            }
+        }
+        return result;
+    }
     
-    
+    /**
+     * Encuentra la base menos repetida de la secuencia de ADN recibida por parametros.
+     * @param sequence String sequencia a analizar.
+     * @return char Nombre de la base mas repetida.
+     */
+    public static char baseMenosRepetida(String sequence) {
+        char result = ' ';
+        int repetida = 1;
+        for(int i = 0; i < ADN.length(); i++) {
+            int num = contarCaracter(ADN.charAt(i), sequence);
+            if(repetida >  num && num != 0) {
+                result = ADN.charAt(i);
+                repetida = contarCaracter(ADN.charAt(i), sequence);
+            }
+        }
+        return result;
+    }
 }
